@@ -16,8 +16,9 @@ class CreateSkillsTable extends Migration
         Schema::create('skills', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
-            $table->unsignedBigInteger('empleado_id');
-            $table->foreign('empleado_id')->references('id')->on('empleados');
+            $table->string('empleado_email');
+            $table->foreign('empleado_email')->references('email')->on('empleados');
+            $table->integer('calificacion');
             $table->timestamps();
         });
     }
