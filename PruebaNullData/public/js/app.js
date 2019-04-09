@@ -76883,17 +76883,17 @@ function (_Component) {
           skills = _this$state.skills;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["CardContent"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
         color: "textPrimary"
-      }, "Email: ", email, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Email: "), email, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
         color: "textPrimary"
-      }, "Nombre: ", nombre, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Nombre: "), " ", nombre, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
         color: "textPrimary"
-      }, "Fecha: ", this.transformDate(fecha), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Fecha: "), " ", this.transformDate(fecha), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
         color: "textPrimary"
-      }, "Puesto: ", puesto, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Puesto: "), " ", puesto, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
         color: "textPrimary"
-      }, "Domicilio: ", domicilio, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Domicilio: "), " ", domicilio, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
         color: "textPrimary"
-      }, "Skills: ", skills, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null)));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Skills: "), " ", skills, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null)));
     }
   }]);
 
@@ -77110,7 +77110,7 @@ function (_Component) {
       puesto: '',
       fecha: '',
       domicilio: '',
-      skills: ''
+      skills: ['Dedicado', 'Backend', 'Frontend', 'Estudioso', 'Programador']
     };
     return _this;
   }
@@ -77120,6 +77120,23 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
+      var handleChangeSkills = function handleChangeSkills(event) {
+        _this2.setState({
+          skills: event.target.value
+        });
+      };
+
+      var names = ['Dedicado', 'Backend', 'Frontend', 'Estudioso', 'Programador'];
+      var ITEM_HEIGHT = 48;
+      var ITEM_PADDING_TOP = 8;
+      var MenuProps = {
+        PaperProps: {
+          style: {
+            maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+            width: 250
+          }
+        }
+      };
       var _this$state = this.state,
           nombre = _this$state.nombre,
           email = _this$state.email,
@@ -77222,16 +77239,30 @@ function (_Component) {
         margin: "normal",
         variant: "outlined",
         onChange: handleChange('domicilio')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TextField"], {
-        id: "outlined-multiline-flexible",
-        label: "Skills",
-        multiline: true,
-        rowsMax: "5",
-        margin: "normal",
-        helperText: "hello",
-        variant: "outlined",
-        onChange: handleChange('skills')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["FormControl"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["InputLabel"], {
+        htmlFor: "select-multiple-chip"
+      }, "Skills"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Select"], {
+        multiple: true,
+        value: names,
+        onChange: this.handleChangeSkills,
+        input: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+          id: "select-multiple-chip"
+        }),
+        renderValue: function renderValue(selected) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, selected.map(function (value) {
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Chip"], {
+              key: value,
+              label: value
+            });
+          }));
+        },
+        MenuProps: MenuProps
+      }, names.map(function (name) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["MenuItem"], {
+          key: name,
+          value: name
+        }, name);
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         onClick: storeEmpleado
       }, "Agregar"))));
     }
@@ -77394,7 +77425,9 @@ function (_Component) {
         align: "right"
       }, "Domicilio"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CustomTableCell, {
         align: "right"
-      }, "Skills"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TableBody"], null, empleados.map(function (row) {
+      }, "Skills"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CustomTableCell, {
+        align: "right"
+      }, "Acciones"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TableBody"], null, empleados.map(function (row) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TableRow"], {
           key: row.email
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CustomTableCell, {

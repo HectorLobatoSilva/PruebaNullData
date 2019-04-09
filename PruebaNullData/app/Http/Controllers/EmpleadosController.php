@@ -15,13 +15,22 @@ class EmpleadosController extends Controller
     }
     public function store(Request $request)
     {
-        Empleado::create([
+        $empleado = Empleado::create([
             'email' => $request->input('email'),
             'nombre' => $request->input('nombre'),
             'puesto' => $request->input('puesto'),
             'fecha' => $request->input('fecha'),
             'domicilio' => $request->input('domicilio'),
         ]);
+
+        // foreach($request->input('skills') as $skill)
+        // {
+        //     Skill::create([
+        //         'nombre'=>$skill,
+        //         'empleado_email'=>$empleado->email,
+        //         'calificacion'=>5
+        //     ]);
+        // }
         
     }
     public function show(Request $request,$email)

@@ -71,6 +71,7 @@ class Empleados extends Component{
                                     <CustomTableCell align="right">Fecha de nacimiento</CustomTableCell>
                                     <CustomTableCell align="right">Domicilio</CustomTableCell>
                                     <CustomTableCell align="right">Skills</CustomTableCell>
+                                    <CustomTableCell align="right">Acciones</CustomTableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>

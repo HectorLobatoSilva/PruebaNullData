@@ -60,12 +60,12 @@ class EmpleadoEmail  extends Component{
         return(
             <Card >
                 <CardContent>
-                    <Typography  color="textPrimary">Email: {email} </Typography><Divider/>
-                    <Typography  color="textPrimary">Nombre: {nombre} </Typography><Divider/>
-                    <Typography  color="textPrimary">Fecha: {this.transformDate(fecha)} </Typography><Divider/>
-                    <Typography  color="textPrimary">Puesto: {puesto} </Typography><Divider/>
-                    <Typography  color="textPrimary">Domicilio: {domicilio} </Typography><Divider/>
-                    <Typography  color="textPrimary">Skills: {skills} </Typography><Divider/>
+                    <Typography  color="textPrimary"><strong>Email: </strong>{email} </Typography><Divider/>
+                    <Typography  color="textPrimary"><strong>Nombre: </strong> {nombre} </Typography><Divider/>
+                    <Typography  color="textPrimary"><strong>Fecha: </strong> {this.transformDate(fecha)} </Typography><Divider/>
+                    <Typography  color="textPrimary"><strong>Puesto: </strong> {puesto} </Typography><Divider/>
+                    <Typography  color="textPrimary"><strong>Domicilio: </strong> {domicilio} </Typography><Divider/>
+                    <Typography  color="textPrimary"><strong>Skills: </strong> {skills} </Typography><Divider/>
                 </CardContent>
             </Card>
         )

@@ -1,5 +1,5 @@
 import  React, { Component } from 'react'
-import { TextField, Card, CardContent, Button, Divider } from '@material-ui/core'
+import { TextField, Card, CardContent, Button, Divider, FormControl, InputLabel, Select, Input, MenuItem, Chip } from '@material-ui/core'
 import axios from 'axios'
 
 class Empleado  extends Component{
@@ -12,12 +12,34 @@ class Empleado  extends Component{
             puesto:'',
             fecha:'',
             domicilio:'',
-            skills:''
+            skills:['Dedicado','Backend','Frontend','Estudioso','Programador'],
         }
     }
 
+    
+
 
     render(){
+
+        const handleChangeSkills = event => {
+            this.setState({ skills: event.target.value });
+        };
+
+        const names = [
+            'Dedicado','Backend','Frontend','Estudioso','Programador'
+        ];
+
+        const ITEM_HEIGHT = 48;
+        const ITEM_PADDING_TOP = 8;
+
+        const MenuProps = {
+            PaperProps: {
+              style: {
+                maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+                width: 250,
+              },
+            },
+          };
 
         const { nombre,email,puesto,fecha,domicilio,skills } = this.state;
 
@@ -104,17 +126,30 @@ class Empleado  extends Component{
                             variant="outlined"
                             onChange={handleChange('domicilio')}
                         />
-                        
-                        <TextField
-                            id="outlined-multiline-flexible"
-                            label="Skills"
-                            multiline
-                            rowsMax="5"
-                            margin="normal"
-                            helperText="hello"
-                            variant="outlined"
-                            onChange={handleChange('skills')}
-                        />
+
+                        <FormControl >
+                            <InputLabel htmlFor="select-multiple-chip">Skills</InputLabel>
+                            <Select
+                                multiple
+                                value={names}
+                                onChange={this.handleChangeSkills}
+                                input={<Input id="select-multiple-chip" />}
+                                renderValue={selected => (
+                                <div >
+                                    {selected.map(value => (
+                                    <Chip key={value} label={value}  />
+                                    ))}
+                                </div>
+                                )}
+                                MenuProps={MenuProps}
+                            >
+                                {names.map(name => (
+                                <MenuItem key={name} value={name}>
+                                    {name}
+                                </MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
                         <Divider/>
                         <Button onClick={storeEmpleado}>Agregar</Button>
                     </form>
